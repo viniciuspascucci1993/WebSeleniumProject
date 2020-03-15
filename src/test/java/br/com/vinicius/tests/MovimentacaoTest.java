@@ -1,23 +1,19 @@
 package br.com.vinicius.tests;
 
-import static br.com.vinicius.tests.utils.DataUtils.getDateFormatter;
+import static br.com.vinicius.tests.DataUtils.getDateFormatter;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import br.com.vinicius.core.BaseTest;
-import br.com.vinicius.core.Propriedades;
 import br.com.vinicius.pages.MenuPage;
 import br.com.vinicius.pages.MovimentacaoPage;
-import br.com.vinicius.tests.utils.DataUtils;
+import br.com.vinicius.tests.DataUtils;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
 	
 	private MenuPage menuPage = new MenuPage();
@@ -33,8 +29,8 @@ public class MovimentacaoTest extends BaseTest {
 		movimentacaoPage.setDataPagamento(getDateFormatter(new Date()));
 		movimentacaoPage.setDescricao("Contas para pagamento");
 		movimentacaoPage.setNomeInteressado("Vinicius Pascucci");
-		movimentacaoPage.setValor("250");
-		movimentacaoPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movimentacaoPage.setValor("500");
+		movimentacaoPage.setConta("Conta para movimentacoes");
 		movimentacaoPage.setStatusPago();
 		
 		movimentacaoPage.salvar();
@@ -72,8 +68,8 @@ public class MovimentacaoTest extends BaseTest {
 		movimentacaoPage.setDataPagamento(getDateFormatter(dataFutura));
 		movimentacaoPage.setDescricao("Contas para pagamento");
 		movimentacaoPage.setNomeInteressado("Vinicius Pascucci");
-		movimentacaoPage.setValor("250");
-		movimentacaoPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+		movimentacaoPage.setValor("500");
+		movimentacaoPage.setConta("Conta para movimentacoes");
 		movimentacaoPage.setStatusPago();
 		
 		movimentacaoPage.salvar();

@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.vinicius.core.BaseTest;
-import br.com.vinicius.core.Propriedades;
 import br.com.vinicius.pages.HomePage;
 import br.com.vinicius.pages.MenuPage;
 
@@ -18,6 +17,6 @@ public class SaldoTest extends BaseTest {
 	public void saldoContaTest() {
 		
 		menuPage.acessarTelaHome();
-		Assert.assertEquals("250.00", homePage.obterSaldoConta(Propriedades.NOME_CONTA_ALTERADA));
+		Assert.assertEquals("534.00", homePage.obterSaldoConta("Conta para saldo"));
 	}
 }

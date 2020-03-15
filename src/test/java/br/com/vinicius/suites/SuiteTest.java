@@ -2,7 +2,6 @@ package br.com.vinicius.suites;
 
 import static br.com.vinicius.core.DriverFactory.killDriver;
 
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -24,22 +23,20 @@ import br.com.vinicius.tests.SaldoTest;
 	ResumoTest.class
 })
 public class SuiteTest {
-	
-	private static LoginPage loginPage = new LoginPage();
+
+	private static LoginPage page = new LoginPage();
 	
 	@BeforeClass
-	public static void inicializa() {
-		// Acessar a tela inicial
-		loginPage.acessarTelaInicial();
+	public static void reset() {
+		page.acessarTelaInicial();
 		
-		loginPage.setEmail("vinicius.pascucci1@gmail.com");
-		loginPage.setSenha("vinicius0105");
+		page.setEmail("vinicius.pascucci1@gmail.com");
+		page.setSenha("vinicius0105");
 		
-		loginPage.acessar();
-	}
-	
-	@AfterClass
-	public static void finaliza() {
+		page.acessar();
+		
+		page.clickResetBtn();
+		
 		killDriver();
 	}
 }

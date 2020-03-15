@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.vinicius.core.BaseTest;
-import br.com.vinicius.core.Propriedades;
 import br.com.vinicius.pages.ContasPage;
 import br.com.vinicius.pages.MenuPage;
 
@@ -18,7 +17,7 @@ public class RemoverMovimentacaoContaTest extends BaseTest {
 		
 		menuPage.acessarTelaListarConta();
 		
-		contasPage.clicarExcluirConta(Propriedades.NOME_CONTA_ALTERADA);
+		contasPage.clicarExcluirConta("Conta com movimentacao");
 		Assert.assertEquals("Conta em uso na movimentações", contasPage.obterMensagemErro());
 	}
 }

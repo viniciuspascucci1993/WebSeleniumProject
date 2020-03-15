@@ -22,6 +22,10 @@ public class LoginPage extends BasePage {
 		clicarBotaoText("Entrar");
 	}
 	
+	public void clickResetBtn() {
+		clickLink("reset");
+	}
+	
 	// Modo Alternativo
 //	public void logar( String email, String senha ) {
 //		setEmail(email);

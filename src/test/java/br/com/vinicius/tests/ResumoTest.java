@@ -5,9 +5,7 @@ import static br.com.vinicius.core.DriverFactory.getDriver;
 import java.util.List;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -16,7 +14,6 @@ import br.com.vinicius.core.DriverFactory;
 import br.com.vinicius.pages.MenuPage;
 import br.com.vinicius.pages.ResumoPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTest extends BaseTest {
 
 	private MenuPage menuPage = new MenuPage();
@@ -39,6 +36,9 @@ public class ResumoTest extends BaseTest {
 		menuPage.acessarTelaResumo();
 		
 		Assert.assertEquals("Seu Barriga - Extrato", getDriver().getTitle());
+		
+		resumoPage.selecionarAno("2019");
+		resumoPage.buscar();
 		
 		// DESAFIO: TESTE DO RESUMNO MENSAL VAZIO.
 		List<WebElement> elementosEncontrados = DriverFactory.getDriver().

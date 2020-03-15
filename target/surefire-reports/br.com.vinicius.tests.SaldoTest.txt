@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.vinicius.tests.SaldoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.871 sec - in br.com.vinicius.tests.SaldoTest

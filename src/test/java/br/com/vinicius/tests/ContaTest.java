@@ -1,16 +1,12 @@
 package br.com.vinicius.tests;
 
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import br.com.vinicius.core.BaseTest;
-import br.com.vinicius.core.Propriedades;
 import br.com.vinicius.pages.ContasPage;
 import br.com.vinicius.pages.MenuPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContaTest extends BaseTest {
 	
 	private MenuPage menuPage = new MenuPage();
@@ -32,8 +28,9 @@ public class ContaTest extends BaseTest {
 	public void teste_2AlterarConta() {
 		menuPage.acessarTelaListarConta();
 		
-		contasPage.clicarAlterarConta("Conta do Teste");
-		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
+		contasPage.clicarAlterarConta("Conta para alterar");
+		
+		contasPage.setNome("Conta Alterada");
 		contasPage.salvar();
 		
 		Assert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
@@ -45,7 +42,7 @@ public class ContaTest extends BaseTest {
 		
 		menuPage.acessarTelaInserirConta();
 		
-		contasPage.setNome(Propriedades.NOME_CONTA_ALTERADA);
+		contasPage.setNome("Conta mesmo nome");
 		contasPage.salvar();
 		
 		Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());

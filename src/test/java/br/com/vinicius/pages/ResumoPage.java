@@ -14,4 +14,12 @@ public class ResumoPage extends BasePage {
 	public String obterMensagemSucesso() {
 		return getXPath(By.xpath("//div[@class='alert alert-success']"));
 	}
+	
+	public void selecionarAno( String ano ) {
+		selectCombobox("ano", ano);
+	}
+	
+	public void buscar() {
+		clickButton(By.xpath("//input[@value='Buscar']"));
+	}
 }
